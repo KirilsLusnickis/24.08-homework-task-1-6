@@ -30,15 +30,12 @@ console.log(numberSplitToArray(777));
 // 4. Write a function that takes an array (a) and a number (n) as
 //  arguments It should return the last n elements of a
 
-var array = [1, 2, 3, 45]
-
 function returnArray (a, n) {
-    const lastItem = array[array.length - 1]
-    console.log(lastItem);
-    return lastItem;
+    return a.slice(-n);
     
 }
-returnArray(array,2);
+const array = [1, 2, 3, 45]
+console.log(returnArray(array,2));
 
 // 5. Write a function that takes two arrays as arguments 
 // Merge both arrays and remove duplicate values 
