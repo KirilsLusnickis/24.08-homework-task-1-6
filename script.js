@@ -10,12 +10,11 @@ console.log(myFunction(1, 2));
 // 2. Write a function that takes a string as an argument. 
 // Extract the last 3 characters from the string. Return the result
 
-function myFunction2() {
-    const str = "id123";
-    const res = str.slice(-3);
-    return res;
+function myFunction2(str) {    
+    return str.slice(-3);
 }
-console.log(myFunction2());
+const str = "id123";
+console.log(myFunction2(str));
 
 // 3. Write a function that takes a number (a) as argument
 //  Split a into its individual digits and return them in an array
