@@ -57,8 +57,12 @@ console.log(myFunction3([1, 2, 3], [3, 5, 6]));
 //Return false otherwise
 
 function myFunction4(obj, str) {
-   
-        return myFunction4(str); 
+
+        if (obj.hasOwnProperty(str)) {
+            return true
+        } else {
+            return false
+        }
 }
 
 console.log(myFunction4({ name: "Bob", age: 35 }, "name")); //true
