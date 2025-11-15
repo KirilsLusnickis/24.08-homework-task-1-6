@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopSwift | Modern E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="container">
+        <a class="logo" href="#">ShopSwift</a>
+        <nav class="nav">
+          <a href="#products">Products</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          class="cart-button"
+          id="cart-toggle"
+          aria-expanded="false"
+          aria-controls="cart"
+        >
+          <span class="cart-count" id="cart-count">0</span>
+          <span>Cart</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__content">
+          <div>
+            <p class="eyebrow">New Season, New Finds</p>
+            <h1>Discover curated essentials for your everyday life</h1>
+            <p class="lead">
+              ShopSwift combines premium quality with thoughtful design to bring
+              you the best products for home, tech, and lifestyle.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#products">Shop now</a>
+              <a class="button button--ghost" href="#newsletter"
+                >Join newsletter</a
+              >
+            </div>
+          </div>
+          <div class="hero__image" role="presentation" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="Lifestyle products" />
+          </div>
+        </div>
+      </section>
+
+      <section class="filters" aria-label="Product filters">
+        <div class="container">
+          <form class="filter-form" id="filter-form">
+            <label class="field">
+              <span class="field__label">Search</span>
+              <input
+                id="search-input"
+                type="search"
+                name="query"
+                placeholder="Search products"
+                aria-label="Search products"
+              />
+            </label>
+            <label class="field">
+              <span class="field__label">Category</span>
+              <select id="category-select" name="category">
+                <option value="all">All</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Max price</span>
+              <input
+                id="price-range"
+                type="range"
+                name="price"
+                min="0"
+                max="500"
+                value="500"
+              />
+              <span id="price-value">$500</span>
+            </label>
+            <button class="button button--ghost" type="reset">Clear</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="products" id="products">
+        <div class="container">
+          <header class="section-header">
+            <h2>Featured products</h2>
+            <p>High-quality goods selected to elevate your everyday routine.</p>
+          </header>
+          <div class="product-grid" id="product-grid" role="list"></div>
+        </div>
+      </section>
+
+      <section class="how-it-works" id="how-it-works">
+        <div class="container">
+          <header class="section-header">
+            <h2>How ShopSwift works</h2>
+            <p>Curated products, seamless checkout, and fast shipping.</p>
+          </header>
+          <div class="steps">
+            <article class="step">
+              <h3>Discover</h3>
+              <p>
+                Browse collections curated by experts and tailored to your
+                lifestyle.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Personalise</h3>
+              <p>
+                Use filters and recommendations to find the perfect match for
+                your needs.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Enjoy</h3>
+              <p>
+                Fast shipping and easy returns ensure you love what you buy—or
+                we'll make it right.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews">
+        <div class="container">
+          <header class="section-header">
+            <h2>What customers say</h2>
+            <p>Trusted by over 10,000 happy customers worldwide.</p>
+          </header>
+          <div class="reviews__grid">
+            <figure class="testimonial">
+              <blockquote>
+                “The product quality is unmatched. I love how easy it is to find
+                exactly what I need.”
+              </blockquote>
+              <figcaption>— Maya P.</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “Fast shipping and excellent customer support. ShopSwift is my
+                go-to store!”
+              </blockquote>
+              <figcaption>— Andre W.</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “The curated collections help me discover products I didn't know
+                I needed.”
+              </blockquote>
+              <figcaption>— Leah S.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="newsletter">
+        <div class="container newsletter__content">
+          <div>
+            <h2>Stay in the loop</h2>
+            <p>
+              Subscribe for exclusive offers, product drops, and curated guides.
+            </p>
+          </div>
+          <form class="newsletter__form">
+            <label class="field">
+              <span class="sr-only">Email address</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <button type="submit" class="button button--primary">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <aside
+      class="cart"
+      id="cart"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      tabindex="-1"
+    >
+      <div class="cart__header">
+        <h2>Your cart</h2>
+        <button class="icon-button" id="cart-close" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart__body" id="cart-items">
+        <p class="empty">Your cart is empty. Start adding your favourite items!</p>
+      </div>
+      <div class="cart__footer">
+        <dl class="totals">
+          <div>
+            <dt>Subtotal</dt>
+            <dd id="cart-subtotal">$0.00</dd>
+          </div>
+          <div>
+            <dt>Shipping</dt>
+            <dd>Calculated at checkout</dd>
+          </div>
+        </dl>
+        <button class="button button--primary button--full" type="button">
+          Checkout
+        </button>
+      </div>
+    </aside>
+
+    <footer class="footer" id="contact">
+      <div class="container footer__content">
+        <div>
+          <a class="logo" href="#">ShopSwift</a>
+          <p>Modern essentials designed to elevate your everyday.</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:hello@shopswift.com">hello@shopswift.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li>123 Market Street, Suite 210, San Francisco, CA</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__note">© <span id="year"></span> ShopSwift. All rights reserved.</p>
+    </footer>
+
+    <div class="overlay" id="overlay" hidden></div>
+
+    <script src="scripts/app.js" type="module"></script>
+  </body>
+</html>
